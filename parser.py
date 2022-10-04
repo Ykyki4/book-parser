@@ -46,6 +46,7 @@ def parse_book(response):
     texts_tags = soup.find_all('div', class_='texts')
     for tag in texts_tags:
         comments.append(tag.find('span', class_='black').text)
+    book_genre = soup.find('span', class_='d_book').text
     book_title = heading_text.split("::")[0].strip()
     author = heading_text.split("::")[1].strip()
     image_url = urljoin('https://tululu.org', image)
@@ -53,8 +54,10 @@ def parse_book(response):
         "title": book_title,
         "author": author,
         "image": image_url,
-        "comments": comments
+        "comments": comments,
+        "genre": book_genre
     }
+    print(book_genre)
     return book
 
 
