@@ -23,11 +23,7 @@ def parse_args():
 def download_txt(url, filename, folder='books/'):
     response = requests.get(url)
     response.raise_for_status()
-    try:
-        check_for_redirect(response)
-    except HTTPError:
-        print("Книги не существует")
-        return
+    check_for_redirect(response)
     filename = sanitize_filename(f"{filename}.txt")
     Path(folder).mkdir(parents=True, exist_ok=True)
     path = PurePath(folder, filename)
@@ -87,7 +83,11 @@ def get_books():
         img_url = book["image"]
         txt_url = f"https://tululu.org/txt.php?id={book_id}"
         filename = f'{book_id} {book_name}'
-        download_txt(txt_url, filename)
+        try:
+            download_txt(txt_url, filename)
+        except HTTPError:
+            print("Книги не существует")
+            continue
         download_book_cover(img_url)
         print(f"Название книги: {book_name}")
         print(book['genre'])
