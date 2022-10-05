@@ -73,8 +73,8 @@ def parse_book(response):
 
 def get_books():
     args = parse_args()
-    for id in range(args.start_id, args.end_id):
-        parse_url = f"https://tululu.org/b{id+1}/"
+    for book_id in range(args.start_id, args.end_id):
+        parse_url = f"https://tululu.org/b{book_id}/"
         response = requests.get(parse_url)
         response.raise_for_status()
         try:
@@ -85,8 +85,8 @@ def get_books():
         book = parse_book(response)
         book_name = book["title"]
         img_url = book["image"]
-        txt_url = f"https://tululu.org/txt.php?id={id+1}"
-        filename = f'{id+1} {book_name}'
+        txt_url = f"https://tululu.org/txt.php?id={book_id}"
+        filename = f'{book_id} {book_name}'
         download_txt(txt_url, filename)
         download_book_cover(img_url)
         print(f"Название книги: {book_name}")
