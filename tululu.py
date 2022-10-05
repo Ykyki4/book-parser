@@ -8,6 +8,7 @@ from pathvalidate import sanitize_filename
 import sys
 import time
 
+
 def check_for_redirect(response):
     if response.url == "https://tululu.org/":
         raise HTTPError
@@ -44,7 +45,6 @@ def download_book_cover(url):
 
 
 def parse_book(response):
-
     soup = BeautifulSoup(response.text, 'lxml')
     heading_text = soup.find('div', id='content').find('h1').text
     image = soup.find('div', class_='bookimage').find('img')['src']
@@ -52,15 +52,14 @@ def parse_book(response):
     comments = [tag.find('span', class_='black').text for tag in texts_tags]
     book_genres_tags = soup.find('span', class_='d_book').find_all("a")
     book_genres = [book_genre.text for book_genre in book_genres_tags]
-    image_url_base = f"{urlsplit(response.url).scheme}://{urlsplit(response.url).netloc}"
-    image_url = urljoin(image_url_base, image)
+    image_url = urljoin(response.url, image)
     title, author = heading_text.split("::")
     book = {
-        "title": title,
-        "author": author,
+        "title": title.strip(),
+        "author": author.strip(),
         "image": image_url,
         "comments": comments,
-        "genre": book_genres
+        "genres": book_genres
     }
 
     return book
@@ -73,28 +72,25 @@ def get_books():
             parse_url = f"https://tululu.org/b{book_id}/"
             response = requests.get(parse_url)
             response.raise_for_status()
-            try:
-                check_for_redirect(response)
-            except HTTPError:
-                print("Книги не существует")
-                continue
+            check_for_redirect(response)
             book = parse_book(response)
             book_name = book["title"]
             img_url = book["image"]
             params = {"id": book_id}
             txt_url = f"https://tululu.org/txt.php"
             filename = f'{book_id} {book_name}'
-            try:
-                download_txt(txt_url, params, filename)
-            except HTTPError:
-                print("Книги не существует")
-                continue
+            download_txt(txt_url, params, filename)
             download_book_cover(img_url)
             print(f"Название книги: {book_name}")
-            print(book['genre'])
+            print(book['genres'])
+
         except requests.exceptions.ConnectionError:
             print("Connection lost, next try in 1 minute", file=sys.stderr)
             time.sleep(60)
+
+        except HTTPError:
+            print("Книги не существует")
+            continue
 
 
 if __name__ == "__main__":
