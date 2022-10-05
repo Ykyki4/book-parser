@@ -71,7 +71,7 @@ def parse_book(response):
     return book
 
 
-def get_book():
+def get_bookS():
     args = arg_parser()
     for id in range(int(args.start_id), int(args.end_id)):
         parse_url = f"https://tululu.org/b{id+1}/"
@@ -94,4 +94,4 @@ def get_book():
 
 
 if __name__ == "__main__":
-    get_book()
+    get_bookS()
