@@ -21,8 +21,8 @@ def parse_args():
     return args
 
 
-def download_txt(url, filename, folder='books/'):
-    response = requests.get(url)
+def download_txt(url, params, filename, folder='books/'):
+    response = requests.get(url, params=params)
     response.raise_for_status()
     check_for_redirect(response)
     filename = sanitize_filename(f"{filename}.txt")
@@ -81,10 +81,11 @@ def get_books():
             book = parse_book(response)
             book_name = book["title"]
             img_url = book["image"]
-            txt_url = f"https://tululu.org/txt.php?id={book_id}"
+            params = {"id": book_id}
+            txt_url = f"https://tululu.org/txt.php"
             filename = f'{book_id} {book_name}'
             try:
-                download_txt(txt_url, filename)
+                download_txt(txt_url, params, filename)
             except HTTPError:
                 print("Книги не существует")
                 continue
