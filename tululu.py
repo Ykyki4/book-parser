@@ -12,10 +12,10 @@ def check_for_redirect(response):
         raise HTTPError
 
 
-def arg_parser():
+def parse_args():
     parser = argparse.ArgumentParser()
-    parser.add_argument("start_id", help="С какого идентификатора скачивать книги")
-    parser.add_argument("end_id", help="До какого идентификатора скачивать книги")
+    parser.add_argument("start_id", help="С какого идентификатора скачивать книги", type=int)
+    parser.add_argument("end_id", help="До какого идентификатора скачивать книги", type=int)
     args = parser.parse_args()
     return args
 
@@ -71,9 +71,9 @@ def parse_book(response):
     return book
 
 
-def get_bookS():
-    args = arg_parser()
-    for id in range(int(args.start_id), int(args.end_id)):
+def get_books():
+    args = parse_args()
+    for id in range(args.start_id, args.end_id):
         parse_url = f"https://tululu.org/b{id+1}/"
         response = requests.get(parse_url)
         response.raise_for_status()
@@ -94,4 +94,4 @@ def get_bookS():
 
 
 if __name__ == "__main__":
-    get_bookS()
+    get_books()
