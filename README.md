@@ -33,6 +33,7 @@
 * --json_path, путь к файлу .json куда записывать все данные о книгах, по умолчанию books_info.json в каталоге с скриптом.
 
 Примеры команды:
+    
     ```python parse_tululu_category.py -start 400 -end 501 --skip_imgs```
     
     ```python parse_tululu_category.py -start 600 --skip_txt --dest_folder C:\my_books```
