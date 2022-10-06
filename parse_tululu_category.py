@@ -16,7 +16,7 @@ def parse_args():
     parser = argparse.ArgumentParser(
         description="Программа для скачивания книг с сайта tululu.org с жанром фантастика"
     )
-    parser.add_argument("-star", "--start_page",
+    parser.add_argument("-start", "--start_page",
                         help="С какой страницы скачивать книги",
                         type=int
                         )
@@ -33,7 +33,7 @@ def parse_args():
     parser.add_argument(
         "--json_path",
         help="Куда скачать json",
-        default="book_info.json"
+        default="books_info.json"
     )
     parser.add_argument(
         '--skip_imgs',
