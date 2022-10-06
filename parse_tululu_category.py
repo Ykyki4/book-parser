@@ -1,3 +1,4 @@
+import argparse
 import json
 import sys
 import time
@@ -8,6 +9,16 @@ import requests
 from bs4 import BeautifulSoup
 from pathvalidate import sanitize_filename
 from requests import HTTPError
+
+
+def parse_args():
+    parser = argparse.ArgumentParser(
+        description="Программа для скачивания книг с сайта tululu.org с жанром фантастика"
+    )
+    parser.add_argument("--start_page", help="С какой страницы скачивать книги", type=int)
+    parser.add_argument("--end_page", help="До какой страницы скачивать книги", default=702, type=int)
+    args = parser.parse_args()
+    return args
 
 
 def check_for_redirect(response):
@@ -64,9 +75,10 @@ def parse_book(response):
     return book
 
 
-def get_book():
+def get_books():
     books = []
-    for page in range(1, 5):
+    args = parse_args()
+    for page in range(args.start_page, args.end_page):
         print("Страница", page)
         url = f"https://tululu.org/l55/{page}/"
         response = requests.get(url)
@@ -86,8 +98,9 @@ def get_book():
                     params = {"id": book_id}
                 txt_url = f"https://tululu.org/txt.php"
                 filename = f'{book_name}'
-                #book["book_path"] = str(download_txt(txt_url, params, filename))
-                #book["img_src"] = str(download_book_cover(img_url))
+                book["book_path"] = str(download_txt(txt_url, params, filename))
+                book["img_src"] = str(download_book_cover(img_url))
+                print(response.url)
                 books.append(book)
             except requests.exceptions.ConnectionError:
                 print("Connection lost, next try in 1 minute", file=sys.stderr)
@@ -101,4 +114,4 @@ def get_book():
 
 
 if __name__ == "__main__":
-    get_book()
+    get_books()
