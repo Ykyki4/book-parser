@@ -114,6 +114,7 @@ def get_books():
         url = f"https://tululu.org/l55/{page}/"
         response = requests.get(url)
         response.raise_for_status()
+        check_for_redirect(response)
         soup = BeautifulSoup(response.text, "lxml")
         book_cards = soup.find_all('table', class_='d_book')
         for numb, book_card in enumerate(book_cards):
@@ -121,6 +122,7 @@ def get_books():
                 book_url = urljoin(response.url, book_card.find("a")["href"])
                 response = requests.get(book_url)
                 response.raise_for_status()
+                check_for_redirect(response)
                 book = parse_book(response)
                 book_name = book["title"]
                 img_url = book["image"]
