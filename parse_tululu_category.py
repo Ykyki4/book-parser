@@ -40,14 +40,19 @@ def download_book_cover(url):
 
 def parse_book(response):
     soup = BeautifulSoup(response.text, 'lxml')
-    heading_text = soup.find('div', id='content').find('h1').text
-    image = soup.find('div', class_='bookimage').find('img')['src']
-    texts_tags = soup.find_all('div', class_='texts')
-    comments = [tag.find('span', class_='black').text for tag in texts_tags]
-    book_genres_tags = soup.find('span', class_='d_book').find_all("a")
+    heading_text_selector = 'table.tabs h1'
+    heading_text_result = soup.select_one(heading_text_selector)
+    image_selector = 'div.bookimage img'
+    image_select_result = soup.select_one(image_selector)
+    texts_tags_selector = 'div.texts'
+    texts_tags = soup.select(texts_tags_selector)
+    tag_selector = 'span.black'
+    comments = [tag.select_one(tag_selector).text for tag in texts_tags]
+    book_genres_tags_selector = 'span.d_book a'
+    book_genres_tags = soup.select(book_genres_tags_selector)
     book_genres = [book_genre.text for book_genre in book_genres_tags]
-    image_url = urljoin(response.url, image)
-    title, author = heading_text.split("::")
+    image_url = urljoin(response.url, image_select_result['src'])
+    title, author = heading_text_result.text.split("::")
     book = {
         "title": title.strip(),
         "author": author.strip(),
@@ -81,10 +86,9 @@ def get_book():
                     params = {"id": book_id}
                 txt_url = f"https://tululu.org/txt.php"
                 filename = f'{book_name}'
-                book["book_path"] = str(download_txt(txt_url, params, filename))
-                book["img_src"] = str(download_book_cover(img_url))
+                #book["book_path"] = str(download_txt(txt_url, params, filename))
+                #book["img_src"] = str(download_book_cover(img_url))
                 books.append(book)
-                print(numb, book_id, book_name)
             except requests.exceptions.ConnectionError:
                 print("Connection lost, next try in 1 minute", file=sys.stderr)
                 time.sleep(60)
