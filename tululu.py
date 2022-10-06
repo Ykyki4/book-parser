@@ -1,3 +1,4 @@
+import os
 from pathlib import Path, PurePath
 from urllib.parse import urljoin, urlsplit
 import argparse
@@ -18,42 +19,53 @@ def parse_args():
     parser = argparse.ArgumentParser()
     parser.add_argument("start_id", help="С какого идентификатора скачивать книги", type=int)
     parser.add_argument("end_id", help="До какого идентификатора скачивать книги", type=int)
+    parser.add_argument(
+        "-df", "--dest_folder",
+        help="Путь к папке куда всё скачивать",
+        default=os.path.dirname(os.path.realpath(__file__))
+    )
     args = parser.parse_args()
     return args
 
 
-def download_txt(url, params, filename, folder='books/'):
+def download_txt(url, params, filename, path):
     response = requests.get(url, params=params)
     response.raise_for_status()
     check_for_redirect(response)
     filename = sanitize_filename(f"{filename}.txt")
-    Path(folder).mkdir(parents=True, exist_ok=True)
-    path = PurePath(folder, filename)
+    Path(f'{path}/books').mkdir(parents=True, exist_ok=True)
+    path = PurePath(f'{path}/books', filename)
     with open(path, 'wb') as file:
         file.write(response.content)
     return path
 
 
-def download_book_cover(url):
+def download_book_cover(url, path):
     response = requests.get(url)
     response.raise_for_status()
-    Path("images").mkdir(parents=True, exist_ok=True)
+    Path(f"{path}/images").mkdir(parents=True, exist_ok=True)
     filename = urlsplit(response.url).path.split("/")[2]
-    path = PurePath("images", filename)
+    path = PurePath(f"{path}/images", filename)
     with open(path, 'wb') as file:
         file.write(response.content)
+    return path
 
 
 def parse_book(response):
     soup = BeautifulSoup(response.text, 'lxml')
-    heading_text = soup.find('div', id='content').find('h1').text
-    image = soup.find('div', class_='bookimage').find('img')['src']
-    texts_tags = soup.find_all('div', class_='texts')
-    comments = [tag.find('span', class_='black').text for tag in texts_tags]
-    book_genres_tags = soup.find('span', class_='d_book').find_all("a")
+    heading_text_selector = 'table.tabs h1'
+    heading_text_result = soup.select_one(heading_text_selector)
+    image_selector = 'div.bookimage img'
+    image_select_result = soup.select_one(image_selector)
+    texts_tags_selector = 'div.texts'
+    texts_tags = soup.select(texts_tags_selector)
+    tag_selector = 'span.black'
+    comments = [tag.select_one(tag_selector).text for tag in texts_tags]
+    book_genres_tags_selector = 'span.d_book a'
+    book_genres_tags = soup.select(book_genres_tags_selector)
     book_genres = [book_genre.text for book_genre in book_genres_tags]
-    image_url = urljoin(response.url, image)
-    title, author = heading_text.split("::")
+    image_url = urljoin(response.url, image_select_result['src'])
+    title, author = heading_text_result.text.split("::")
     book = {
         "title": title.strip(),
         "author": author.strip(),
@@ -67,6 +79,7 @@ def parse_book(response):
 
 def get_books():
     args = parse_args()
+    download_path = args.dest_folder
     for book_id in range(args.start_id, args.end_id):
         try:
             parse_url = f"https://tululu.org/b{book_id}/"
@@ -79,8 +92,8 @@ def get_books():
             params = {"id": book_id}
             txt_url = f"https://tululu.org/txt.php"
             filename = f'{book_id} {book_name}'
-            download_txt(txt_url, params, filename)
-            download_book_cover(img_url)
+            download_txt(txt_url, params, filename, download_path)
+            download_book_cover(img_url, download_path)
             print(f"Название книги: {book_name}")
             print(book['genres'])
 
