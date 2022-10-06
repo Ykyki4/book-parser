@@ -1,13 +1,14 @@
 import argparse
 import json
+import os
+import re
 import sys
 import time
 from urllib.parse import urljoin, urlsplit
-import re
-import requests
+
 from bs4 import BeautifulSoup
+import requests
 from requests import HTTPError
-import os
 
 from tululu import parse_book, download_book_cover, download_txt, check_for_redirect
 
@@ -87,7 +88,6 @@ def get_books():
                     book["book_path"] = str(download_txt(txt_url, params, filename, download_path))
                 if not args.skip_imgs:
                     book["img_src"] = str(download_book_cover(img_url, download_path))
-                print(response.url)
                 books.append(book)
             except requests.exceptions.ConnectionError:
                 print("Connection lost, next try in 1 minute", file=sys.stderr)
