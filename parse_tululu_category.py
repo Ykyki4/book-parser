@@ -80,9 +80,7 @@ def get_books():
                 book = parse_book(response)
                 book_name = book["title"]
                 img_url = book["image"]
-                book_id_unpacked = re.findall(r'\d+', urlsplit(response.url).path)
-                for book_id in book_id_unpacked:
-                    params = {"id": book_id}
+                params = {"id": str(*re.findall(r'\d+', urlsplit(response.url).path))}
                 txt_url = f"https://tululu.org/txt.php"
                 filename = f'{book_name}'
                 if not args.skip_txt:
