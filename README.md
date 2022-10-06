@@ -36,6 +36,7 @@
     
     ```python parse_tululu_category.py -start 400 -end 501 --skip_imgs```
     
+    
     ```python parse_tululu_category.py -start 600 --skip_txt --dest_folder C:\my_books```
 
 Скачивание данных происходит также как и в предыдущем скрипте, за исключением того что появляется json файл с информацией по каждой книге, и в терминал выводится страница, и ссылка на каждую книгу.
