@@ -20,7 +20,7 @@
 
 Запускайте скрипт с двумя аргументами, первый это от какого id книги скачивать, второй до какого. Пример команды:
     
-    ```python tululu.py 20 30```
+ ```python tululu.py 20 30```
     
 После чего, в терминал будет выводиться название книги и её жанры, если книги под таким id не существует, в терминал выведется это. В папке с скриптом, будут созданы две папки books, images, далее в папку books скачается книга в txt формате, а в папку images скачается картинка в png, если картинки нет, скачается nopic.gif 
 #### parse_tululu_category.py
@@ -34,11 +34,11 @@
 
 Примеры команды:
     
-    ```python parse_tululu_category.py -start 400 -end 501 --skip_imgs```
+  ```python parse_tululu_category.py -start 400 -end 501 --skip_imgs```
     
 Скачивается с 400 по 500 страницу, картинки пропускаются
 
-    ```python parse_tululu_category.py -start 600 --skip_txt --dest_folder C:\my_books```
+ ```python parse_tululu_category.py -start 600 --skip_txt --dest_folder C:\my_books```
     
 Скачивается с 600 по 701 страницу, пропускаются книги, путь указан
 
