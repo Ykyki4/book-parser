@@ -3,6 +3,7 @@ import json
 from jinja2 import Environment, FileSystemLoader, select_autoescape
 from parse_tululu_category import parse_args
 from livereload import Server, shell
+from more_itertools import chunked
 
 def on_reload():
     args = parse_args()
@@ -20,7 +21,7 @@ def on_reload():
     books = json.loads(books_json)
 
     rendered_page = template.render(
-        books=books
+        books_chunks=list(chunked(books, 2))
     )
 
     with open('index.html', 'w', encoding="utf8") as file:
@@ -28,7 +29,6 @@ def on_reload():
 
 
 if __name__ == "__main__":
-
     server = Server()
     server.watch('template.html', on_reload)
     server.serve(root='.')
