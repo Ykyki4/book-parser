@@ -85,9 +85,11 @@ def get_books():
                 txt_url = f"https://tululu.org/txt.php"
                 filename = f'{book_name}'
                 if not args.skip_txt:
-                    book["book_path"] = str(download_txt(txt_url, params, filename, download_path))
+                    book_path, book_filename = os.path.split(download_txt(txt_url, params, filename, download_path))
+                    book['book_path'] = os.path.join("books" + os.sep + book_filename)
                 if not args.skip_imgs:
-                    book["img_src"] = str(download_book_cover(img_url, download_path))
+                    img_path, img_filename = os.path.split(download_book_cover(img_url, download_path))
+                    book['img_src'] = os.path.join("images" + os.sep + img_filename)
                 books.append(book)
             except requests.exceptions.ConnectionError:
                 print("Connection lost, next try in 1 minute", file=sys.stderr)
