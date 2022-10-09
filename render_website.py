@@ -1,4 +1,6 @@
 import json
+import os
+from pathlib import Path
 
 from jinja2 import Environment, FileSystemLoader, select_autoescape
 from parse_tululu_category import parse_args
@@ -19,16 +21,17 @@ def on_reload():
         books_json = my_file.read()
 
     books = json.loads(books_json)
-
-    rendered_page = template.render(
-        books_chunks=list(chunked(books, 2))
-    )
-
-    with open('index.html', 'w', encoding="utf8") as file:
-        file.write(rendered_page)
+    for page, books_page_chunks in enumerate(list(chunked(books, 10))):
+        rendered_page = template.render(
+            books_chunks=list(chunked(books_page_chunks, 2))
+        )
+        Path('pages').mkdir(parents=True, exist_ok=True)
+        with open(f'pages/index{page}.html', 'w', encoding="utf8") as file:
+            file.write(rendered_page)
 
 
 if __name__ == "__main__":
+    on_reload()
     server = Server()
     server.watch('template.html', on_reload)
     server.serve(root='.')
