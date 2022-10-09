@@ -1,5 +1,7 @@
 import json
+import math
 import os
+from itertools import count
 from pathlib import Path
 
 from jinja2 import Environment, FileSystemLoader, select_autoescape
@@ -23,10 +25,12 @@ def on_reload():
     books = json.loads(books_json)
     for page, books_page_chunks in enumerate(list(chunked(books, 10))):
         rendered_page = template.render(
-            books_chunks=list(chunked(books_page_chunks, 2))
+            books_chunks=list(chunked(books_page_chunks, 2)),
+            pages_numb=math.ceil(len(books) / 10),
+            current_page=page+1
         )
         Path('pages').mkdir(parents=True, exist_ok=True)
-        with open(f'pages/index{page}.html', 'w', encoding="utf8") as file:
+        with open(f'pages/index{page+1}.html', 'w', encoding="utf8") as file:
             file.write(rendered_page)
 
 
