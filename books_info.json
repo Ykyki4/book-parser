@@ -1,5 +1,374 @@
 [
     {
+        "title": "UFO - Enemy Unknown",
+        "author": "Маруцкий Владимир",
+        "image": "https://tululu.org/images/nopic.gif",
+        "comments": [],
+        "genres": [
+            "Научная фантастика"
+        ],
+        "book_path": "books/UFO - Enemy Unknown.txt",
+        "img_src": "images/nopic.gif"
+    },
+    {
+        "title": "U - 4004",
+        "author": "Локхард Джордж",
+        "image": "https://tululu.org/images/nopic.gif",
+        "comments": [],
+        "genres": [
+            "Научная фантастика"
+        ],
+        "book_path": "books/U - 4004.txt",
+        "img_src": "images/nopic.gif"
+    },
+    {
+        "title": "U - 4004 a.d.",
+        "author": "Локхард Джордж",
+        "image": "https://tululu.org/images/nopic.gif",
+        "comments": [],
+        "genres": [
+            "Научная фантастика",
+            "Фэнтези"
+        ],
+        "book_path": "books/U - 4004 a.d..txt",
+        "img_src": "images/nopic.gif"
+    },
+    {
+        "title": "Via Dolorosa",
+        "author": "Мелконян Агоп",
+        "image": "https://tululu.org/images/nopic.gif",
+        "comments": [],
+        "genres": [
+            "Научная фантастика"
+        ],
+        "book_path": "books/Via Dolorosa.txt",
+        "img_src": "images/nopic.gif"
+    },
+    {
+        "title": "Wing Commander: Битва флотов",
+        "author": "Форстчен Уильям",
+        "image": "https://tululu.org/shots/44567.jpg",
+        "comments": [
+            "Начиная с книги \"расплата\" читаешь на одном дыхании. Захватывает практически с первых страниц. Обе книги сплошное действие нет всякой дебильной лирики, размазывания каши по тарелке, высасывания из пальца. Рекомендую."
+        ],
+        "genres": [
+            "Научная фантастика"
+        ],
+        "book_path": "books/Wing Commander Битва флотов.txt",
+        "img_src": "images/44567.jpg"
+    },
+    {
+        "title": "Wing Commander: Место боя",
+        "author": "Виконтов Дмитрий",
+        "image": "https://tululu.org/images/nopic.gif",
+        "comments": [],
+        "genres": [
+            "Научная фантастика"
+        ],
+        "book_path": "books/Wing Commander Место боя.txt",
+        "img_src": "images/nopic.gif"
+    },
+    {
+        "title": "Wing Commander: Операция Одиночество",
+        "author": "Воронин Дмитрий",
+        "image": "https://tululu.org/shots/44569.jpg",
+        "comments": [
+            "Kniga ochen mne ponravilas, ia zakoreneliy fantastoman s 7, 5 llet zachitivalsia paooini, rouling, s.t. A.l. K.e. R., seichas mne 14 no perechitivayu knigi po mnogu raz eragon1, 2,3, na 17raz dumayu i etu knigu prochtu eshe ne raz. S uvazenim."
+        ],
+        "genres": [
+            "Научная фантастика"
+        ],
+        "book_path": "books/Wing Commander Операция Одиночество.txt",
+        "img_src": "images/44569.jpg"
+    },
+    {
+        "title": "Wing Commander: Расплата",
+        "author": "Сташефф Кристофер",
+        "image": "https://tululu.org/shots/44571.jpg",
+        "comments": [],
+        "genres": [
+            "Научная фантастика"
+        ],
+        "book_path": "books/Wing Commander Расплата.txt",
+        "img_src": "images/44571.jpg"
+    },
+    {
+        "title": "Wing Commander: Рейд обреченных",
+        "author": "Дмитрий Виконтов",
+        "image": "https://tululu.org/images/nopic.gif",
+        "comments": [],
+        "genres": [
+            "Научная фантастика"
+        ],
+        "book_path": "books/Wing Commander Рейд обреченных.txt",
+        "img_src": "images/nopic.gif"
+    },
+    {
+        "title": "Wing Commander: Записки пилота",
+        "author": "Семеренко Владислав",
+        "image": "https://tululu.org/images/nopic.gif",
+        "comments": [],
+        "genres": [
+            "Научная фантастика"
+        ],
+        "book_path": "books/Wing Commander Записки пилота.txt",
+        "img_src": "images/nopic.gif"
+    },
+    {
+        "title": "Wing Commander III: Сердце Тигра",
+        "author": "Форстчен Уильям",
+        "image": "https://tululu.org/shots/44574.jpg",
+        "comments": [],
+        "genres": [
+            "Научная фантастика"
+        ],
+        "book_path": "books/Wing Commander III Сердце Тигра.txt",
+        "img_src": "images/44574.jpg"
+    },
+    {
+        "title": "Wonderland2000",
+        "author": "Рогов Константин",
+        "image": "https://tululu.org/images/nopic.gif",
+        "comments": [],
+        "genres": [
+            "Научная фантастика"
+        ],
+        "book_path": "books/Wonderland2000.txt",
+        "img_src": "images/nopic.gif"
+    },
+    {
+        "title": "X-COM - UFO Defense",
+        "author": "Дуэйн Диана",
+        "image": "https://tululu.org/images/nopic.gif",
+        "comments": [],
+        "genres": [
+            "Научная фантастика"
+        ],
+        "book_path": "books/X-COM - UFO Defense.txt",
+        "img_src": "images/nopic.gif"
+    },
+    {
+        "title": "X-Fights",
+        "author": "Грин Алекс (Злотник",
+        "image": "https://tululu.org/images/nopic.gif",
+        "comments": [],
+        "genres": [
+            "Научная фантастика"
+        ],
+        "book_path": "books/X-Fights.txt",
+        "img_src": "images/nopic.gif"
+    },
+    {
+        "title": "XXI век",
+        "author": "Рыбаков Александр",
+        "image": "https://tululu.org/images/nopic.gif",
+        "comments": [],
+        "genres": [
+            "Научная фантастика"
+        ],
+        "book_path": "books/XXI век.txt",
+        "img_src": "images/nopic.gif"
+    },
+    {
+        "title": "et in pulverem reverteris",
+        "author": "Зайдель Януш",
+        "image": "https://tululu.org/images/nopic.gif",
+        "comments": [],
+        "genres": [
+            "Научная фантастика"
+        ],
+        "book_path": "books/et in pulverem reverteris.txt",
+        "img_src": "images/nopic.gif"
+    },
+    {
+        "title": "Деревня Медный ковш",
+        "author": "Патрацкая Наталья Владимировна",
+        "image": "https://tululu.org/images/nopic.gif",
+        "comments": [
+            "Достаточно абсурдная книга, прочтению не подлежит."
+        ],
+        "genres": [
+            "Научная фантастика",
+            "Прочие приключения",
+            "Современные любовные романы"
+        ],
+        "book_path": "books/Деревня Медный ковш.txt",
+        "img_src": "images/nopic.gif"
+    },
+    {
+        "title": "Космические вампиры",
+        "author": "Уилсон Колин",
+        "image": "https://tululu.org/shots/47735.jpg",
+        "comments": [],
+        "genres": [
+            "Научная фантастика",
+            "Эротика"
+        ],
+        "book_path": "books/Космические вампиры.txt",
+        "img_src": "images/47735.jpg"
+    },
+    {
+        "title": "Любовь, опаленная огнем",
+        "author": "Афанасьев Александр Владимирович",
+        "image": "https://tululu.org/images/nopic.gif",
+        "comments": [],
+        "genres": [
+            "Научная фантастика",
+            "Остросюжетные любовные романы"
+        ],
+        "book_path": "books/Любовь, опаленная огнем.txt",
+        "img_src": "images/nopic.gif"
+    },
+    {
+        "title": "Метаморфозы вампиров-2",
+        "author": "Уилсон Колин",
+        "image": "https://tululu.org/shots/48231.jpg",
+        "comments": [],
+        "genres": [
+            "Научная фантастика",
+            "Эротика"
+        ],
+        "book_path": "books/Метаморфозы вампиров-2.txt",
+        "img_src": "images/48231.jpg"
+    },
+    {
+        "title": "Метаморфозы вампиров",
+        "author": "Уилсон Колин",
+        "image": "https://tululu.org/shots/48232.jpg",
+        "comments": [],
+        "genres": [
+            "Научная фантастика",
+            "Эротика"
+        ],
+        "book_path": "books/Метаморфозы вампиров.txt",
+        "img_src": "images/48232.jpg"
+    },
+    {
+        "title": "Облакайдеры(2004, 2006, 2008)",
+        "author": "Патрацкая Наталья",
+        "image": "https://tululu.org/images/nopic.gif",
+        "comments": [],
+        "genres": [
+            "Научная фантастика",
+            "Современные любовные романы"
+        ],
+        "book_path": "books/Облакайдеры(2004, 2006, 2008).txt",
+        "img_src": "images/nopic.gif"
+    },
+    {
+        "title": "Ускользающие тени",
+        "author": "Лампитт Дина",
+        "image": "https://tululu.org/shots/50762.jpg",
+        "comments": [],
+        "genres": [
+            "Исторические любовные романы",
+            "Научная фантастика"
+        ],
+        "book_path": "books/Ускользающие тени.txt",
+        "img_src": "images/50762.jpg"
+    },
+    {
+        "title": "Варлетка Спироза",
+        "author": "Патрацкая Наталья Владимировна",
+        "image": "https://tululu.org/images/nopic.gif",
+        "comments": [],
+        "genres": [
+            "Научная фантастика",
+            "Современные любовные романы"
+        ],
+        "book_path": "books/Варлетка Спироза.txt",
+        "img_src": "images/nopic.gif"
+    },
+    {
+        "title": "Великий Волшебник",
+        "author": "Антонов Антон Станиславович",
+        "image": "https://tululu.org/images/nopic.gif",
+        "comments": [],
+        "genres": [
+            "Научная фантастика",
+            "Эротика"
+        ],
+        "book_path": "books/Великий Волшебник.txt",
+        "img_src": "images/nopic.gif"
+    },
+    {
+        "title": "Утомленная фея - 1",
+        "author": "Ходов Андрей",
+        "image": "https://tululu.org/images/nopic.gif",
+        "comments": [],
+        "genres": [
+            "Альтернативная история",
+            "Научная фантастика",
+            "Политика"
+        ],
+        "book_path": "books/Утомленная фея - 1.txt",
+        "img_src": "images/nopic.gif"
+    },
+    {
+        "title": "Утомленная фея - 2",
+        "author": "Ходов Андрей",
+        "image": "https://tululu.org/images/nopic.gif",
+        "comments": [],
+        "genres": [
+            "Альтернативная история",
+            "Научная фантастика",
+            "Политика"
+        ],
+        "book_path": "books/Утомленная фея - 2.txt",
+        "img_src": "images/nopic.gif"
+    },
+    {
+        "title": "Утомленная фея - 3",
+        "author": "Ходов Андрей",
+        "image": "https://tululu.org/images/nopic.gif",
+        "comments": [],
+        "genres": [
+            "Альтернативная история",
+            "Научная фантастика",
+            "Политика"
+        ],
+        "book_path": "books/Утомленная фея - 3.txt",
+        "img_src": "images/nopic.gif"
+    },
+    {
+        "title": "Утомленная фея - 4",
+        "author": "Ходов Андрей",
+        "image": "https://tululu.org/images/nopic.gif",
+        "comments": [],
+        "genres": [
+            "Альтернативная история",
+            "Научная фантастика",
+            "Политика"
+        ],
+        "book_path": "books/Утомленная фея - 4.txt",
+        "img_src": "images/nopic.gif"
+    },
+    {
+        "title": "Утомленная фея",
+        "author": "Ходов Андрей",
+        "image": "https://tululu.org/images/nopic.gif",
+        "comments": [],
+        "genres": [
+            "Альтернативная история",
+            "Научная фантастика",
+            "Политика"
+        ],
+        "book_path": "books/Утомленная фея.txt",
+        "img_src": "images/nopic.gif"
+    },
+    {
+        "title": "Аквамарин и летучие мыши",
+        "author": "Патрацкая Наталья",
+        "image": "https://tululu.org/images/nopic.gif",
+        "comments": [],
+        "genres": [
+            "Научная фантастика",
+            "Прочие приключения"
+        ],
+        "book_path": "books/Аквамарин и летучие мыши.txt",
+        "img_src": "images/nopic.gif"
+    },
+    {
         "title": "Деревня Медный ковш",
         "author": "Патрацкая Наталья Владимировна",
         "image": "https://tululu.org/images/nopic.gif",
@@ -9,8 +378,8 @@
             "Прочие приключения",
             "Современные любовные романы"
         ],
-        "book_path": "books\\Деревня Медный ковш.txt",
-        "img_src": "images\\nopic.gif"
+        "book_path": "books/Деревня Медный ковш.txt",
+        "img_src": "images/nopic.gif"
     },
     {
         "title": "Изгнанники Земли",
@@ -21,8 +390,8 @@
             "Научная фантастика",
             "Прочие приключения"
         ],
-        "book_path": "books\\Изгнанники Земли.txt",
-        "img_src": "images\\59890.jpg"
+        "book_path": "books/Изгнанники Земли.txt",
+        "img_src": "images/59890.jpg"
     },
     {
         "title": "Капитан Буревестника",
@@ -33,8 +402,8 @@
             "Научная фантастика",
             "Прочие приключения"
         ],
-        "book_path": "books\\Капитан Буревестника.txt",
-        "img_src": "images\\nopic.gif"
+        "book_path": "books/Капитан Буревестника.txt",
+        "img_src": "images/nopic.gif"
     },
     {
         "title": "Лазурный гигант",
@@ -45,8 +414,8 @@
             "Исторические приключения",
             "Научная фантастика"
         ],
-        "book_path": "books\\Лазурный гигант.txt",
-        "img_src": "images\\60207.jpg"
+        "book_path": "books/Лазурный гигант.txt",
+        "img_src": "images/60207.jpg"
     },
     {
         "title": "Остров Больших Молний",
@@ -57,8 +426,8 @@
             "Научная фантастика",
             "Прочие приключения"
         ],
-        "book_path": "books\\Остров Больших Молний.txt",
-        "img_src": "images\\60627.jpg"
+        "book_path": "books/Остров Больших Молний.txt",
+        "img_src": "images/60627.jpg"
     },
     {
         "title": "Подводные земледельцы",
@@ -69,8 +438,8 @@
             "Морские приключения",
             "Научная фантастика"
         ],
-        "book_path": "books\\Подводные земледельцы.txt",
-        "img_src": "images\\nopic.gif"
+        "book_path": "books/Подводные земледельцы.txt",
+        "img_src": "images/nopic.gif"
     },
     {
         "title": "Радамехский карлик",
@@ -81,8 +450,8 @@
             "Исторические приключения",
             "Научная фантастика"
         ],
-        "book_path": "books\\Радамехский карлик.txt",
-        "img_src": "images\\61065.jpg"
+        "book_path": "books/Радамехский карлик.txt",
+        "img_src": "images/61065.jpg"
     },
     {
         "title": "Рубиновая звезда",
@@ -93,8 +462,8 @@
             "Научная фантастика",
             "Прочие приключения"
         ],
-        "book_path": "books\\Рубиновая звезда.txt",
-        "img_src": "images\\nopic.gif"
+        "book_path": "books/Рубиновая звезда.txt",
+        "img_src": "images/nopic.gif"
     },
     {
         "title": "Семь смертей Лешего",
@@ -105,8 +474,8 @@
             "Научная фантастика",
             "Прочие приключения"
         ],
-        "book_path": "books\\Семь смертей Лешего.txt",
-        "img_src": "images\\nopic.gif"
+        "book_path": "books/Семь смертей Лешего.txt",
+        "img_src": "images/nopic.gif"
     },
     {
         "title": "Тайна Архелона (Крик дельфина)",
@@ -119,8 +488,8 @@
             "Морские приключения",
             "Научная фантастика"
         ],
-        "book_path": "books\\Тайна Архелона (Крик дельфина).txt",
-        "img_src": "images\\61433.jpg"
+        "book_path": "books/Тайна Архелона (Крик дельфина).txt",
+        "img_src": "images/61433.jpg"
     },
     {
         "title": "Виртуальная Мадам Марго",
@@ -131,8 +500,8 @@
             "Научная фантастика",
             "Прочие приключения"
         ],
-        "book_path": "books\\Виртуальная Мадам Марго.txt",
-        "img_src": "images\\nopic.gif"
+        "book_path": "books/Виртуальная Мадам Марго.txt",
+        "img_src": "images/nopic.gif"
     },
     {
         "title": "Глас Господа",
@@ -143,8 +512,8 @@
             "Классическая проза",
             "Научная фантастика"
         ],
-        "book_path": "books\\Глас Господа.txt",
-        "img_src": "images\\nopic.gif"
+        "book_path": "books/Глас Господа.txt",
+        "img_src": "images/nopic.gif"
     },
     {
         "title": "Из воспоминаний Иёна Тихого",
@@ -158,8 +527,8 @@
             "Научная фантастика",
             "Юмористическая фантастика"
         ],
-        "book_path": "books\\Из воспоминаний Иёна Тихого.txt",
-        "img_src": "images\\66293.jpg"
+        "book_path": "books/Из воспоминаний Иёна Тихого.txt",
+        "img_src": "images/66293.jpg"
     },
     {
         "title": "Кибериада",
@@ -170,8 +539,8 @@
             "Классическая проза",
             "Научная фантастика"
         ],
-        "book_path": "books\\Кибериада.txt",
-        "img_src": "images\\67112.jpg"
+        "book_path": "books/Кибериада.txt",
+        "img_src": "images/67112.jpg"
     },
     {
         "title": "Охотники до любви",
@@ -182,8 +551,8 @@
             "Контркультура",
             "Научная фантастика"
         ],
-        "book_path": "books\\Охотники до любви.txt",
-        "img_src": "images\\nopic.gif"
+        "book_path": "books/Охотники до любви.txt",
+        "img_src": "images/nopic.gif"
     },
     {
         "title": "Сказка о царе и оружейном мастере",
@@ -194,8 +563,8 @@
             "Научная фантастика",
             "Современная проза"
         ],
-        "book_path": "books\\Сказка о царе и оружейном мастере.txt",
-        "img_src": "images\\nopic.gif"
+        "book_path": "books/Сказка о царе и оружейном мастере.txt",
+        "img_src": "images/nopic.gif"
     },
     {
         "title": "Сказки роботов",
@@ -206,8 +575,8 @@
             "Классическая проза",
             "Научная фантастика"
         ],
-        "book_path": "books\\Сказки роботов.txt",
-        "img_src": "images\\74661.jpg"
+        "book_path": "books/Сказки роботов.txt",
+        "img_src": "images/74661.jpg"
     },
     {
         "title": "Вологда-1612",
@@ -218,8 +587,8 @@
             "Историческая проза",
             "Научная фантастика"
         ],
-        "book_path": "books\\Вологда-1612.txt",
-        "img_src": "images\\nopic.gif"
+        "book_path": "books/Вологда-1612.txt",
+        "img_src": "images/nopic.gif"
     },
     {
         "title": "Жизнь во время войны",
@@ -230,8 +599,8 @@
             "Научная фантастика",
             "Современная проза"
         ],
-        "book_path": "books\\Жизнь во время войны.txt",
-        "img_src": "images\\78794.jpg"
+        "book_path": "books/Жизнь во время войны.txt",
+        "img_src": "images/78794.jpg"
     },
     {
         "title": "Звездные дневники Иёна Тихого",
@@ -246,8 +615,8 @@
             "Научная фантастика",
             "Юмористическая фантастика"
         ],
-        "book_path": "books\\Звездные дневники Иёна Тихого.txt",
-        "img_src": "images\\79011.jpg"
+        "book_path": "books/Звездные дневники Иёна Тихого.txt",
+        "img_src": "images/79011.jpg"
     },
     {
         "title": "Взгляд из сердца",
@@ -261,8 +630,8 @@
             "Прочая детская литература",
             "Эзотерика"
         ],
-        "book_path": "books\\Взгляд из сердца.txt",
-        "img_src": "images\\nopic.gif"
+        "book_path": "books/Взгляд из сердца.txt",
+        "img_src": "images/nopic.gif"
     },
     {
         "title": "Легенда",
@@ -274,8 +643,8 @@
         "genres": [
             "Научная фантастика"
         ],
-        "book_path": "books\\Легенда.txt",
-        "img_src": "images\\nopic.gif"
+        "book_path": "books/Легенда.txt",
+        "img_src": "images/nopic.gif"
     },
     {
         "title": "Маша",
@@ -285,8 +654,8 @@
         "genres": [
             "Научная фантастика"
         ],
-        "book_path": "books\\Маша.txt",
-        "img_src": "images\\nopic.gif"
+        "book_path": "books/Маша.txt",
+        "img_src": "images/nopic.gif"
     },
     {
         "title": "Феномен фантастики",
@@ -296,7 +665,7 @@
         "genres": [
             "Научная фантастика"
         ],
-        "book_path": "books\\Феномен фантастики.txt",
-        "img_src": "images\\85114.jpg"
+        "book_path": "books/Феномен фантастики.txt",
+        "img_src": "images/85114.jpg"
     }
 ]
