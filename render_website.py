@@ -7,6 +7,7 @@ from livereload import Server
 from more_itertools import chunked
 from parse_tululu_category import parse_args
 
+
 def on_reload():
     args = parse_args()
 
